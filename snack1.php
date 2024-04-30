@@ -3,29 +3,36 @@
 // Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema:
 // Olimpia Milano - Cantù | 55-60
 
+// non usare mai spazi per le chiavi
+
 $play = [
     [
-        "squadra di casa" => "Olimpia Milano",
-        "squadra ospite" => "Cantù",
-        "punti squadra casa" => "55",
-        "punti squadra ospite" => "60",
+        "squadraCasa" => "Olimpia Milano",
+        "squadraOspite" => "Cantù",
+        "puntiCasa" => "55",
+        "puntiOspite" => "60",
     ],
     [
-        "squadra di casa" => "Saronno",
-        "squadra ospite" => "Varese",
-        "punti squadra casa" => "70",
-        "punti squadra ospite" => "10",
+        "squadraCasa" => "Saronno",
+        "squadraOspite" => "Varese",
+        "puntiCasa" => "70",
+        "puntiOspite" => "10",
     ],
     [
-        "squadra di casa" => "Roma",
-        "squadra ospite" => "Empoli",
-        "punti squadra casa" => "39",
-        "punti squadra ospite" => "90",
+        "squadraCasa" => "Roma",
+        "squadraOspite" => "Empoli",
+        "puntiCasa" => "39",
+        "puntiOspite" => "90",
     ]
 ];
 
 // var_dump($play);
-
+// posso anche estrarmi qui i dati e stamparli nell'html attraverso il comando echo
+// $listaCasa = "";
+// $
+// foreach ($play as $element) {
+//     $listaCasa .= $element['squadraCasa'] . ", ";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -67,11 +74,12 @@ $play = [
         <h1>Snack 1</h1>
         <div class="text-center">
             <ul>
-                <?php foreach ($play as $key)
-
-                    echo $key['squadra di casa'] ?> - <?php echo $key['squadra ospite'] ?>
-
+                <?php foreach ($play as $key) {
+                    echo "<li>" . $key["squadraCasa"] . " - " . $key["squadraOspite"] . " | " . $key["puntiCasa"] . " - " . $key["puntiOspite"] . "</li>";
+                } ?>
             </ul>
+
+            <p><?php echo $listaCasa; ?></p>
         </div>
     </div>
 </body>
