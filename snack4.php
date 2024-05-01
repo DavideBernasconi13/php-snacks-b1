@@ -1,3 +1,19 @@
+<?php
+// Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+function creaNumeri($numMin, $numMax, $numItem)
+{
+    $newArray = [];
+
+    while (count($newArray) < $numItem) {
+        $number = rand($numMin, $numMax);
+        if (!in_array($number, $newArray)) {
+            $newArray[] = $number;
+        }
+    }
+    return $newArray;
+}
+var_dump(creaNumeri(1, 100, 15));
+?>
 <!DOCTYPE html>
 <html lang="it">
 
