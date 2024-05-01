@@ -12,7 +12,8 @@ function creaNumeri($numMin, $numMax, $numItem)
     }
     return $newArray;
 }
-var_dump(creaNumeri(1, 100, 15));
+$serieNumeri = creaNumeri(1, 100, 15);
+var_dump($serieNumeri);
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -52,6 +53,8 @@ var_dump(creaNumeri(1, 100, 15));
     <!-- Start exercize -->
     <div class="container">
         <h1>Snack 4</h1>
+        <h2>Crea serie di numeri</h2>
+        <p><?php var_dump($serieNumeri) ?> </p>
     </div>
 </body>
 
