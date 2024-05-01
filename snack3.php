@@ -39,21 +39,16 @@ $posts = [
 ];
 /* Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.*/
 
-//estrarre la data 
-//for ($i = 0; $i < count($posts); $i++) {
-$date = (array_keys($posts));
-//var_dump($date);
-for ($i = 0; $i < count($date); $i++) {
-    $data_singola = [($date[$i])];
-    var_dump($data_singola . $key["title"]);
-    var_dump($data_singola);
-}
-//}
-
-//var_dump(array_keys($posts));
-//ciclare nella data 
-// stampare i post 
-
+// //estrarre la data (per ogni chiave ho sempre un valore)
+// foreach ($posts as $data => $postList) {
+//     echo $data;
+//     // guardo cosa c'è nell'array associato alla chiave  (stampo i post )
+//     foreach ($postList as $post) {
+//         echo $post['title'];
+//         echo $post['author'];
+//         echo $post['text'];
+//     }
+// }
 
 ?>
 <!DOCTYPE html>
@@ -94,7 +89,21 @@ for ($i = 0; $i < count($date); $i++) {
     <!-- Start exercize -->
     <div class="container">
         <h1>Snack 3</h1>
-        <h2><?php echo $data_singola ?></h2>
+        <h2>Lista post</h2>
+        <ul>
+            <?php foreach ($posts as $data => $postList) { ?>
+                <li>
+                    <p>Data: <?php echo $data ?> </p>
+                    <?php foreach ($postList as $post) { ?>
+                        <div>
+                            <p><?php echo $post["title"] ?></p>
+                            <p><?php echo $post["author"] ?></p>
+                            <p><?php echo $post["text"] ?></p>
+                        </div>
+                    <?php } ?>
+                </li>
+            <?php } ?>
+        </ul>
     </div>
 </body>
 
