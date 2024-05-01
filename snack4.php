@@ -13,7 +13,7 @@ function creaNumeri($numMin, $numMax, $numItem)
     return $newArray;
 }
 $serieNumeri = creaNumeri(1, 100, 15);
-var_dump($serieNumeri);
+//var_dump($serieNumeri);
 ?>
 <!DOCTYPE html>
 <html lang="it">

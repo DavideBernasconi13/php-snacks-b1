@@ -1,3 +1,22 @@
+<?php
+$paragrafoOriginale = "Vi preoccupate di come organizzare le vostre idee in un'accozzaglia testuale che trasmetta efficacemente la narrazione dei vostri concetti?
+
+Scrivere un paragrafo efficace è una delle abilità più importanti che si possano sviluppare come scrittori. 
+
+E avere a disposizione un'eccellente capacità di scrivere paragrafi è uno dei mestieri essenziali che si possono sviluppare.
+
+Tuttavia, i paragrafi non si scrivono da soli, né sono efficaci, convincenti e leggibili di default.
+
+Questo articolo vi illustrerà i consigli su come scrivere un paragrafo perfetto che porterà un ulteriore livello di coinvolgimento nella vostra storia. 
+
+Diamoci dentro!
+
+Che cos'è un paragrafo?
+Un paragrafo è un'unità di frasi tutte collegate a un unico tema o idea. È una struttura di scrittura comune che usiamo pertrasmettere informazioni in modo chiaro e conciso. ";
+var_dump($paragrafoOriginale);
+$paragrafoRisultato = explode(".", $paragrafoOriginale);
+var_dump($paragrafoRisultato);
+?>
 <!DOCTYPE html>
 <html lang="it">
 
