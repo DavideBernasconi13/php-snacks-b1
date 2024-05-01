@@ -13,9 +13,9 @@ Diamoci dentro!
 
 Che cos'è un paragrafo?
 Un paragrafo è un'unità di frasi tutte collegate a un unico tema o idea. È una struttura di scrittura comune che usiamo pertrasmettere informazioni in modo chiaro e conciso. ";
-var_dump($paragrafoOriginale);
+// var_dump($paragrafoOriginale);
 $paragrafoRisultato = explode(".", $paragrafoOriginale);
-var_dump($paragrafoRisultato);
+// var_dump($paragrafoRisultato);
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -55,6 +55,15 @@ var_dump($paragrafoRisultato);
     <!-- Start exercize -->
     <div class="container">
         <h1>Snack 5</h1>
+        <h2>Suddivisione paragrafo</h2>
+        <h6>Paragrafo originale</h6>
+        <p><?php echo $paragrafoOriginale ?></p>
+        <h6>Paragrafo suddiviso</h6>
+        <p><?php
+        for ($i = 0; $i < count($paragrafoRisultato); $i++) {
+            echo $paragrafoRisultato[$i] . ".<br>";
+        } ?>
+        </p>
     </div>
 </body>
 
