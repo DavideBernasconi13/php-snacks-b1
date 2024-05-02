@@ -72,15 +72,14 @@ $play = [
     <!-- Start exercize -->
     <div class="container">
         <h1>Snack 1</h1>
-        <div class="text-center">
-            <ul>
+        <main>
+            <ul class="list-group">
                 <?php foreach ($play as $key) {
-                    echo "<li>" . $key["squadraCasa"] . " - " . $key["squadraOspite"] . " | " . $key["puntiCasa"] . " - " . $key["puntiOspite"] . "</li>";
+                    //var_dump($key);
+                    echo '<li class="list-group-item">' . $key["squadraCasa"] . " - " . $key["squadraOspite"] . " | " . $key["puntiCasa"] . " - " . $key["puntiOspite"] . "</li>";
                 } ?>
             </ul>
-
-            <p><?php echo $listaCasa; ?></p>
-        </div>
+        </main>
     </div>
 </body>
 
