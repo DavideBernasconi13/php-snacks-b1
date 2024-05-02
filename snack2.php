@@ -1,3 +1,27 @@
+<?php
+
+// Snack 2
+// Con un form passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+
+function controlla()
+{
+    $message = "";
+    if (!empty($_GET["name"]) && !empty($_GET["email"]) && !empty($_GET["age"])) {
+        $name = $_GET["name"];
+        $email = $_GET["email"];
+        $age = $_GET["age"];
+
+        if (strlen($name) > 3 && strpos($email, '@') && strpos($email, '.') && is_numeric($age)) {
+            $message = ('accesso riuscito');
+        } else {
+            $message = ('accesso negato');
+        }
+        return $message;
+    }
+}
+var_dump(controlla());
+
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -13,7 +37,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">Snack PHP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -34,10 +58,35 @@
         </div>
     </nav>
     <!-- Start exercize -->
-    <div class="container">
+    <header class="container">
 
         <h1>Snack 2</h1>
-    </div>
+
+    </header>
+    <main class="container">
+        <form action="snack2.php" method="GET">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp"
+                    placeholder="Enter name" name="name">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" placeholder="Age" name="age">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-default">Reset</button>
+        </form>
+    </main>
 </body>
 
 </html>
